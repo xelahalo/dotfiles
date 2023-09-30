@@ -1,6 +1,9 @@
 # PATH
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# WORKDIR
+export d="$HOME/Work"
+
 # zoxide
 eval "$(zoxide init zsh)"
 
@@ -47,4 +50,5 @@ launch() {
 }
 
 # nvim
-
+alias nano=nvim
+alias vim=nvim
