@@ -1,35 +1,75 @@
 window:
   padding:
-    x: 10
-    y: 10
-  class:
-    instance: Alacritty
-    general: Alacritty
-  opacity: 1
+    x: 5
+    y: 5
+  dimensions:
+    columns: 120
+    lines: 30
+  opacity: 0.98
+  decorations_theme_variant: Dark
+  decorations: buttonless
+  option_as_alt: OnlyLeft
 
 scrolling:
-  history: 10000
+  history: 2000
   multiplier: 3
+  auto_scroll: true
+
+cursor:
+  unfocused_hollow: true
+  style:
+    blinking: Never
+
+env:
+  TERM: xterm-256color
 
 font:
   normal:
     family: JetBrainsMono Nerd Font
-    style:  Regular
+    style: Regular
   bold:
     family: JetBrainsMono Nerd Font
-    style:  Bold
+    style: Bold
   italic:
     family: JetBrainsMono Nerd Font
-    style:  Italic
+    style: Italic
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 7
+  size: 18
+  offset:
+    y: 8
+  glyph_offset:
+    y: 8
 draw_bold_text_with_bright_colors: true
-
-import:
-  - ~/.config/alacritty/catppuccin-mocha.yml
 
 selection:
   save_to_clipboard: false
+colors:
+  # Default colors
+  primary:
+    background: '#282828'
+    foreground: '#eeeeee'
 
+  # Normal colors
+  normal:
+    black: '#282828'
+    red: '#f43753'
+    green: '#c9d05c'
+    yellow: '#ffc24b'
+    blue: '#b3deef'
+    magenta: '#d3b987'
+    cyan: '#73cef4'
+    white: '#eeeeee'
+
+  # Bright colors
+  bright:
+    black: '#4c4c4c'
+    red: '#f43753'
+    green: '#c9d05c'
+    yellow: '#ffc24b'
+    blue: '#b3deef'
+    magenta: '#d3b987'
+    cyan: '#73cef4'
+    white: '#feffff'
+theme: Tender
