@@ -10,6 +10,9 @@ eval "$(zoxide init zsh)"
 # starship
 eval "$(starship init zsh)"
 
+# thefuck 
+eval $(thefuck --alias)
+
 # lsd
 alias ls='lsd'
 alias l='ls -l'

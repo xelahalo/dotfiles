@@ -17,7 +17,7 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
-brew install bat tmux nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make pip python npm node cargo
+brew install bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make pip python npm node cargo thefuck
 brew install --cask alacritty alt-tab discord-canary font-jetbrains-mono-nerd-font rectangle 1password 1password-cli firefox microsoft-edge obsidian raycast slack spotify visual-studio-code ngrok docker dozer postman
 
 # zsh setup
