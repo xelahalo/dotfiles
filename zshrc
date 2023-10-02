@@ -3,6 +3,8 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # WORKDIR
 export d="$HOME/Work"
+# DOTFILES FOLDER
+export DOTS="$HOME/dotfiles"
 
 # zoxide
 eval "$(zoxide init zsh)"
