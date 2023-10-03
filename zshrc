@@ -2,7 +2,7 @@
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # WORKDIR
-export d="$HOME/Work"
+export d="$HOME/git"
 # DOTFILES FOLDER
 export DOTS="$HOME/dotfiles"
 
@@ -57,3 +57,7 @@ launch() {
 # nvim
 alias nano=nvim
 alias vim=nvim
+
+# moving around in the terminal
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word

@@ -10,7 +10,7 @@ return {
       "folke/neodev.nvim",
       "RRethy/vim-illuminate",
       "hrsh7th/cmp-nvim-lsp",
-      "b0o/schemastore.nvim"
+      "b0o/schemastore.nvim",
     },
     config = function()
       -- Set up Mason before anything else
@@ -20,6 +20,7 @@ return {
           "lua_ls",
           "pylsp",
           "eslint",
+          "rust_analyzer",
         },
         automatic_installation = true,
       })
@@ -106,6 +107,20 @@ return {
         },
       })
 
+      -- Rust
+      require("lspconfig")["rust_analyzer"].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "rust" },
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+          },
+        },
+      })
+
       -- Python
       require("lspconfig")["pyright"].setup({
         on_attach = on_attach,
@@ -137,6 +152,32 @@ return {
           }
         }
       })
+    end
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = { "rust" },
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+  {
+    "saecki/crates.nvim",
+    ft = { "rust" , "toml" },
+    config = function()
+      require("crates").setup({
+        popup = {
+          border = "rounded",
+        },
+      })
+    end
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function ()
+      local M = require("cmp")
+      table.insert(M.sources, {name = "crates"})
+      return M
     end
   }
 }

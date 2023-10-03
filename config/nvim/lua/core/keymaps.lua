@@ -66,3 +66,8 @@ end, "Toggle between light and dark themes")
 
 -- Clear after search
 map("n", "<leader>ur", "<cmd>nohl<cr>", "Clear highlights")
+
+-- Update crates
+map("n", "<leader>rcu", function()
+  require("crates").upgrade_all_crates()
+end, "Update crates")
