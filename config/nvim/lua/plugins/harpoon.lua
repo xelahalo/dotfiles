@@ -16,6 +16,8 @@ return {
       map("n", "<leader>a", mark.add_file, "Add file to Harpoon")
       map("n", "<leader><leader>", ui.toggle_quick_menu, "Reveal Harpoon quick menu")
 
+      map("n", "<tab>", function() ui.nav_next() end, "Navigate to next file")
+      map("n", "<S-tab>", function() ui.nav_prev() end, "Navigate to previous file")
       map("n", "<C-z>", function() ui.nav_file(1) end, "Navigate to file 1")
       map("n", "<C-x>", function() ui.nav_file(2) end, "Navigate to file 2")
       map("n", "<C-c>", function() ui.nav_file(3) end, "Navigate to file 3")

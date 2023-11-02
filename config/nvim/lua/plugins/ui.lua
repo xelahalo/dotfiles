@@ -1,13 +1,5 @@
 return {
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufRead",
-    config = function()
-      local ident = require("indent_blankline")
-      ident.setup()
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     dependencies = { "nvim-lua/plenary.nvim" },

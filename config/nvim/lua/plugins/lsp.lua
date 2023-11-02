@@ -6,7 +6,11 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "j-hui/fidget.nvim",
+      {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach",
+     },
       "folke/neodev.nvim",
       "RRethy/vim-illuminate",
       "hrsh7th/cmp-nvim-lsp",
@@ -156,14 +160,11 @@ return {
   },
   {
     "rust-lang/rust.vim",
-    ft = { "rust" },
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
+    ft = { "rust" }
   },
   {
     "saecki/crates.nvim",
-    ft = { "rust" , "toml" },
+    ft = { "rust", "toml" },
     config = function()
       require("crates").setup({
         popup = {
@@ -174,9 +175,9 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function ()
+    opts = function()
       local M = require("cmp")
-      table.insert(M.sources, {name = "crates"})
+      table.insert(M.sources, { name = "crates" })
       return M
     end
   }
