@@ -73,7 +73,12 @@ end, "Update crates")
 map("n", "<leader>rf", ":RustFmt<CR>", "Format Rust code")
 
 -- Nvim as git mergetool
-map("n", "<leader>gl", ":diffget local", "Use changes from the left (LOCAL)")
-map("n", "<leader>gr", ":diffget remote", "Use changes from the right (REMOTE)")
-map("n", "<leader>gmc", ":wqa<CR>", "Save and quit all buffers")
+function Is_merge_tool_active()
+    return vim.fn.globpath(vim.fn.expand('%:p:h'), '*.orig') ~= ''
+end
 
+if Is_merge_tool_active() then
+    map("n", "<leader>gl", ":diffget local", "Use changes from the left (LOCAL)")
+    map("n", "<leader>gr", ":diffget remote", "Use changes from the right (REMOTE)")
+    map("n", "<leader>gs", ":wqa<CR>", "Save and quit all buffers")
+end
