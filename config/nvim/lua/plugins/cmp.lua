@@ -27,6 +27,7 @@ return {
 
       require("luasnip/loaders/from_vscode").lazy_load()
       cmp.setup({
+        enabled = true,
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)

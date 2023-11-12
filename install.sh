@@ -21,15 +21,15 @@ brew install bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh st
 brew install --cask alacritty alt-tab discord-canary font-jetbrains-mono-nerd-font rectangle 1password 1password-cli firefox microsoft-edge obsidian raycast slack spotify visual-studio-code ngrok docker dozer postman
 
 # zsh setup
-osascript -e 'display notification "Setting up zsh..."'
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-source zshrc
-ln -s $DOTS/zshrc $HOME/.zshrc
-ln -s $DOTS/zprestorc $HOME/.zprestorc
+# osascript -e 'display notification "Setting up zsh..."'
+# git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# setopt EXTENDED_GLOB
+# for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+# done
+# source zshrc
+# ln -s $DOTS/zshrc $HOME/.zshrc
+# ln -s $DOTS/zprestorc $HOME/.zprestorc
 
 # .config folder setup
 osascript -e 'display notification "Setting up .config folder"'
@@ -70,5 +70,5 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock autohide -bool true
 
 # Move dock to the left
-defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock orientation -string "right"
 # --------------------- End dock and finder settings ------------------------

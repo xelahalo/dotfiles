@@ -13,13 +13,13 @@ return {
      },
       "folke/neodev.nvim",
       "RRethy/vim-illuminate",
-      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp", 
       "b0o/schemastore.nvim",
     },
     config = function()
       -- Set up Mason before anything else
       require("mason").setup()
-      require("mason-lspconfig").setup({
+      require("mason-lspconfig").setup({ 
         ensure_installed = {
           "lua_ls",
           "pylsp",
@@ -74,10 +74,9 @@ return {
         lsp_map("<leader>lh", vim.lsp.buf.hover, bufnr, "Type definition")
         lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 
-        lsp_map("<leader>gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
+        lsp_map("<leader>gd", "<cmd>Telescope lsp_definitions<cr>" ,bufnr, "Goto Definition")
         lsp_map("<leader>gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
         lsp_map("<leader>gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
-        lsp_map("<leader>gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
         lsp_map("<leader>F", "<cmd>Format<cr>", bufnr, "Format")
 
@@ -88,6 +87,7 @@ return {
       -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+      local util = require("lspconfig/util")
 
       -- Lua
       require("lspconfig")["lua_ls"].setup({
@@ -116,6 +116,7 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { "rust" },
+        root_dir = util.root_pattern("Cargo.toml"),
         settings = {
           ["rust-analyzer"] = {
             cargo = {

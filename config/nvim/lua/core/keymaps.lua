@@ -1,9 +1,5 @@
 local map = require("helpers.keys").map
 
--- Blazingly fast way out of insert mode
-map("i", "jk", "<esc>")
-map("i", "kj", "<esc>")
-
 -- Fast way to add new line without leaving normal mode
 map("n", "<leader><Enter>", "o<esc>", "Add new line")
 
@@ -21,6 +17,8 @@ map("n", "<leader>so", "<cmd>so<cr>", "Source file")
 map('n', '<leader>ld', vim.diagnostic.open_float, "Show diagnostics under cursor")
 map('n', '<C-]>', function () vim.diagnostic.goto_next() end, "Go to next diagnostic")
 map('n', '<C-[>', function () vim.diagnostic.goto_prev() end, "Go to previous diagnostic")
+-- Unbind the Escape key in normal mode (Fixes weird thing where esc goes to next diagnostics)
+map('n', '<Esc>', '<Nop>')
 
 -- Easier access to beginning and end of lines
 map("n", "<M-h>", "^", "Go to beginning of line")
