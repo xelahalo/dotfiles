@@ -17,9 +17,7 @@ for opt, val in pairs(opts) do
   vim.o[opt] = val
 end
 
--- Set other options
-local colorscheme = require("helpers.colorscheme")
-vim.cmd.colorscheme(colorscheme)
+-- Set other option
 vim.api.nvim_create_autocmd("VimEnter", {
   command = "set nornu nonu | set number | set relativenumber",
 })
@@ -32,4 +30,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- vim.diagnostic.config({
 --   virtual_text = false,
 -- })
-
