@@ -3,7 +3,7 @@ require("custom.core.options")
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = { theme = 'catppuccin' }
+M.ui = { theme = 'rosepine' }
 M.plugins = 'custom.plugins'
 
 

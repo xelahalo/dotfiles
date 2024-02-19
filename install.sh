@@ -12,27 +12,22 @@ fi
 # homebrew setup
 osascript -e 'display notification "Installing homebrew..."'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/xelahalo/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
-brew install bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make pip python npm node cargo thefuck
-brew install --cask alacritty alt-tab discord-canary font-jetbrains-mono-nerd-font rectangle 1password 1password-cli firefox microsoft-edge obsidian raycast slack spotify visual-studio-code ngrok docker dozer postman
+brew install bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make python npm node rust thefuck
+brew install --cask wezterm alt-tab discord-canary font-jetbrains-mono-nerd-font rectangle 1password 1password-cli firefox arc microsoft-edge obsidian raycast slack spotify visual-studio-code ngrok docker dozer postman
 
 # zsh setup
-# osascript -e 'display notification "Setting up zsh..."'
-# git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-# setopt EXTENDED_GLOB
-# for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-#   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-# done
-# source zshrc
-# ln -s $DOTS/zshrc $HOME/.zshrc
-# ln -s $DOTS/zprestorc $HOME/.zprestorc
+source zshrc
+ln -s $DOTS/zshrc $HOME/.zshrc
 
 # .config folder setup
 osascript -e 'display notification "Setting up .config folder"'
+mkdir $HOME/.config
 ln -s $DOTS/config/* $HOME/.config
 
 # ----------------------- Dock and finder settings ---------------------------
