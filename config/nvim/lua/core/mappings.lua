@@ -460,6 +460,44 @@ M.gitsigns = {
   },
 }
 
+M.rust = {
+  n = {
+    ["<leader>rf"] = {
+      ":RustFmt<CR>",
+      "Format rust code",
+    },
+  },
+}
+
+-- M.dap = {
+--   n = {
+--     ["<leader>dr"] = {
+--       "<cmd> RustDebuggables <CR>",
+--       "List debuggables",
+--     },
+--     ["<leader>db"] = {
+--       "<cmd> DapToggleBreakpoint <CR>",
+--       "Toggle breakpoint",
+--     },
+--     ["<leader>dx"] = {
+--       "<cmd> DapTerminate <CR>",
+--       "Terminate debug session",
+--     },
+--     ["<leader>do"] = {
+--       "<cmd> DapStepOver <CR>",
+--       "Step over",
+--     },
+--     ["<leader>dus"] = {
+--       function ()
+--         local widgets = require('dap.ui.widgets');
+--         local sidebar = widgets.sidebar(widgets.scopes);
+--         sidebar.open();
+--       end,
+--       "Open debugging sidebar"
+--     },
+--   }
+-- }
+
 -- M.harpoon = {
 --   n = {
 --     ["<leader>a"] = { require("harpoon.mark").add_file, "Add file to Harpoon" },

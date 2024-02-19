@@ -70,10 +70,3 @@ alias vim=nvim
 # moving around in the terminal
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-
-[ -f "/Users/xelahalo/.ghcup/env" ] && source "/Users/xelahalo/.ghcup/env" # ghcup-envexport 
-export CAIRN_MNT_DIR="/Users/xelahalo/git/personal/cairn/host_mnt"
-export CAIRN_MNT_DIR="/Users/xelahalo/git/personal/cairn/host_mnt"
-export CAIRN_MNT_DIR="/var/folders/_p/0j2rcc0n1t5d2bs61zp_48540000gn/T/extra-dir-6108852476"
-export CAIRN_MNT_DIR="/var/folders/_p/0j2rcc0n1t5d2bs61zp_48540000gn/T/extra-dir-79126829576"
-export CAIRN_MNT_DIR="/Users/xelahalo/git/personal/cairn/host_mnt"

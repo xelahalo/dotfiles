@@ -15,6 +15,33 @@ local plugins = {
     end
   },
   {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      require("core.utils").load_mappings "rust"
+    end
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    config = function ()
+      require("custom.configs.rust-tools")
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function ()
+      require("custom.configs.dap-ui")
+    end
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+  },
+  {
     "Pocco81/auto-save.nvim",
     event = "BufRead",
     opts = {},
@@ -69,6 +96,19 @@ local plugins = {
       require("mini.move").setup()
     end,
   },
+  {
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("custom.configs.copilot")
+  end,
+  },
+  {
+  'mrcjkb/haskell-tools.nvim',
+  version = '^3', -- Recommended
+  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  }
 }
 
 return plugins
