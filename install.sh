@@ -18,7 +18,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 
-brew install bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make python npm node rust thefuck
+brew install git-gui bat tmux tpm nvm neovim ripgrep fzf fd lazygit pfetch gnu-sed gh starship zoxide lsd make python npm node rust thefuck
 brew install --cask wezterm alt-tab discord-canary font-jetbrains-mono-nerd-font rectangle 1password 1password-cli firefox arc microsoft-edge obsidian raycast slack spotify visual-studio-code ngrok docker dozer postman
 
 # zsh setup
