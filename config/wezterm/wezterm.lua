@@ -57,7 +57,12 @@ config.keys = {
 		key = 'k',
 		mods = 'CTRL|SHIFT',
 		action = wezterm.action.DisableDefaultAssignment
-	}
+	},
+  {
+    key = 'v',
+    mods = 'CTRL',
+    action = wezterm.action.PasteFrom 'Clipboard'
+  }
 }
 
 -- setup color scheme
@@ -65,5 +70,7 @@ local colors = require("lua/rose-pine").colors()
 local window_frame = require("lua/rose-pine").window_frame()
 config.colors = colors
 config.window_frame = window_frame
+
+-- config.default_domain = 'WSL:Ubuntu'
 
 return config

@@ -1,6 +1,5 @@
 # PATH
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export PATH="/usr/local/bin/try:$PATH"
 
 # util-linux
 export PATH="/usr/local/opt/util-linux/bin:$PATH"
@@ -15,17 +14,7 @@ export d="$HOME/git"
 # DOTFILES FOLDER
 export DOTS="$HOME/dotfiles"
 
-# zoxide
-eval "$(zoxide init zsh)"
-
-# starship
-eval "$(starship init zsh)"
-
-# thefuck 
-eval $(thefuck --alias)
-
 # lsd
-alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -67,6 +56,9 @@ launch() {
 alias nano=nvim
 alias vim=nvim
 
-# moving around in the terminal
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+# oh my zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export EDITOR='vim'
